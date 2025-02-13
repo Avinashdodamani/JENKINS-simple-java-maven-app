@@ -3,6 +3,10 @@ pipeline {
         label 'DevNode'
     }
 
+    environment {
+        NAME = "Avinash"
+    }
+
     tools {
         maven 'Maven Jobs'
     }
@@ -11,6 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh "mvn clean package"
+                echo "Hello, $NAME"
             }
         }
     }
